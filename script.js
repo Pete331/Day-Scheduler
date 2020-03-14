@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  // loops through and clones a html row and adds attributes/text etc
   for (i = 9; i < 19; i++) {
     $("#row-0")
       .clone()
@@ -20,13 +22,15 @@ $(document).ready(function() {
     $("#currentDay").text(nowScreen);
 
     var now = moment();
+
     // for testing - uncomment one of the below lines and change hour number
     // now.add(3, 'hours');
     // now.subtract(7, "hours");
 
     // gets the moment and returns the hour and stores in now variable
-
     var now = now.hour();
+
+// changes class(visual) depending on the time
     $(".description").each(function() {
       var timeQuery = parseInt($(this).attr("id"));
       if (now === timeQuery) {
@@ -39,6 +43,7 @@ $(document).ready(function() {
     });
   }
 
+  // gets items stored in local storage
   function getEntries() {
     $('[id="8"]').val(JSON.parse(localStorage.getItem("800")));
     $('[id="9"]').val(JSON.parse(localStorage.getItem("900")));
@@ -52,6 +57,7 @@ $(document).ready(function() {
     $('[id="17"]').val(JSON.parse(localStorage.getItem("1700")));
   }
 
+  // saves items in local storage
   $(".saveBtn").click(function() {
     localStorage.setItem(
       $(this)
@@ -68,7 +74,7 @@ $(document).ready(function() {
     );
   });
 
-
+//clears local storage
 $(".clear-btn").on("click", function() {
   window.localStorage.clear();
   window.location.reload();
