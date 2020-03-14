@@ -29,17 +29,25 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
+      <div class="text-center">
+        <button class="btn clear-btn p-3 mb-3">Clear All</button>
+      </div>
+
       <!-- Timeblocks go here -->
-      <div class="row">
-        <div class="time-block col-1 border">8am</div>
-        <div id="8" class="description col-10 border">
-          <textarea id="8am-input"></textarea>
+      <div id="row-0" class="row">
+        <div id="time" class="time-block col-1 border">800</div>
+        <div id="description" class="description col-10 border">
+          <textarea id="input"></textarea>
         </div>
-        <div class="col-1  p-0">
-          <button class="saveBtn w-100 h-100">Save</button>
+        <div class="col-1 p-0">
+          <button class="btn saveBtn w-100 h-100 border">&#x1f4be;</button>
         </div>
       </div>
-      <div class="row">
+
+
+      <!-- I have kept my original html code here in case i want to go back to the non dynamic page - i wanted to challenge myself a bit more -->
+     
+      <!-- <div class="row">
         <div class="time-block col-1 border">9am</div>
         <div id="9" class="description col-10 border">
           <textarea id="9am-input"></textarea>
@@ -75,7 +83,7 @@
           <button class="saveBtn w-100 h-100">Save</button>
         </div>
       </div>
-      
+       -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
